@@ -1,0 +1,23 @@
+FORNECEDORES:
+    Fornecedor varchar(100),
+    ID int,
+    Endereco varchar(180),
+    Produto_Fornecido varchar(100),
+    Valor_Produto DOUBLE(5,2),
+    Contato varchar(100),
+    Descricao TEXT
+
+CADASTRO_PRODUTOS:
+    Produto varchar(100),
+    Marca varchar(100),
+    ID int,
+    Valor_Produto DOUBLE(5,2),
+	Descricao varchar(200),
+	Quantidade int
+
+Estoque:
+    Entrada varchar(180),
+    ID int,
+    
+
+

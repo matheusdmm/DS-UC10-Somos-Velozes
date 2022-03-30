@@ -1,0 +1,7 @@
+A CEO da empresa Somos Velozes detectou diversas falhas no sistema com relação ao controle de dados, ocasionando graves perdas de dados. Para ela um software ideal tem que ter funcionalidades como cadastro de produtos, de fornecedores, controle de estoque com entrada e gerenciamento de produtos, frente de caixa que permita a venda dos produtos. Você deverá criar um documento de especificação de requisitos que devem ser classificados como funcionais e não funcionais.
+
+Você já definiu o escopo do trabalho com o software da Somos Velozes. Agora você precisa organizar a execução das tarefas e atribuir tempo para elas. Para isto você precisa criar um cronograma com todas as atividades necessárias para o desenvolvimento do novo software da Somos Velozes.
+
+========
+
+Fazer análise estrutural do sistema: Trabalhar o MVC (Model-View-Controller). Aplicar os diagramas de caso de usos e diagrama de classe criados na UC anterior na construção do sistema. Modelar/Desenhar o Banco de dados. Desenvolver o front-end do sistema WEB.
