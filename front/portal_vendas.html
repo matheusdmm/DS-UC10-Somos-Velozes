@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somos Velozes - Fornecedores</title>
+    <title>Somos Velozes</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>  
 </head>
 <body>
     <header class="py-3 mb-3 border-bottom bg-primary">
@@ -18,10 +17,10 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M17 7a8.003 8.003 0 0 0-7.493 5.19l1.874.703A6.002 6.002 0 0 1 23 15a6 6 0 0 1-6 6H7A6 6 0 0 1 5.008 9.339a7 7 0 0 1 13.757-2.143A8.027 8.027 0 0 0 17 7z"/></svg>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
-                <li><a class="dropdown-item" href="./index.html">Home</a></li>
-                <li><a class="dropdown-item active" href="./fornecedores.html" aria-current="page">Fornecedores</a></li>
-                <li><a class="dropdown-item" href="./estoque.html">Estoque</a></li>
-                <li><a class="dropdown-item" href="./portal_vendas.html">Vendas</a></li>
+              <li><a class="dropdown-item" href="./index.html">Home</a></li>
+              <li><a class="dropdown-item" href="./fornecedores.html">Fornecedores</a></li>
+              <li><a class="dropdown-item" href="./estoque.html">Estoque</a></li>
+              <li><a class="dropdown-item  active" href="./portal_vendas.html" aria-current="page">Vendas</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Entregas</a></li>
               <li><a class="dropdown-item" href="#">Funcionários</a></li>
@@ -47,35 +46,9 @@
       <!-- Renderiza o conteúdo principal da dash -->
       <div class="container bg-light border rounded-3">
             <br>
-            <h3>Consulta de fornecedores</h3>
-            <a class="btn btn-primary" onClick="window.location.reload();" role="button">Atualizar a consulta</a>
-            <a class="btn btn-success" role="button" onclick="OpenCadastroNovoFornecedor();">Cadastrar ou editar fornecedor</a>          
-            <br>   
-            
-            <!-- Renderizado pelo javascript -->
-            <div class="table-responsive">
-                <table class="table">
-                    <tr>
-                        <th scope="col"># ID</th>
-                        <th scope="col">Fornecedor</th>
-                        <th scope="col">Contato</th>
-                        <th scope="col">Produto</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Preço</th>
-                        <th scope="col">Quantidade</th>
-                    </tr>
-                        <!-- Renderizado pelo js -->
-                        <tbody id="tabelaFornecedores"></tbody>
-                </table>
-            </div>
-
-            <!-- Spinner -->
-            <div class="d-flex justify-content-center">
-                <div class="spinner-border text-primary" id="spinner" role="status"></div>
-            </div>
-            <br>
+            <h3>Portal de vendas</h3>
+                
       </div>
-      
 
     <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/firebaseconfig.js"></script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div class="container">
+        <br />
+        <h3>Cadastrar produto no stoque</h3>
+        <br />
+        <form id="formCadastroFornecedor">
+            <div class="mb-3">
+                <label class="form-label">ID do produto</label>
+                <input type="text" class="form-control" id="produtoID" placeholder="Utilize apenas para pesquisar produtos já cadastrados" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Produto</label>
+                <input type="text" class="form-control" id="produtoNome" placeholder="Nome do produto" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Marca do produto</label>
+                <input type="text" class="form-control" id="marcaProduto" placeholder="marca do produto" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descrição</label>
+                <input type="text" class="form-control" id="produtoDescricao" placeholder="Descrição do produto" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Preço</label>
+                <input type="text" class="form-control" id="fornecedorProdutoPreco" placeholder="Preço em R$" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Quantidade</label>
+                <input type="text" class="form-control" id="fornecedorProdutoQuantidade" placeholder="Quantidade em unidades ou litros" />
+            </div>
+            <button class="btn btn-success" id="insert" type="button">
+                Cadastrar produto
+            </button>
+            <button class="btn btn-info" id="select" type="button">
+                Buscar produto
+            </button>
+            <button class="btn btn-info" id="update" type="button">
+                Atualizar produto
+            </button>
+            <button class="btn btn-danger" id="delete" type="button">
+                Apagar produto
+            </button>
+            <button class="btn btn-warning" onclick="window.location.reload();" type="button">
+                Resetar página
+            </button>
+        </form>
+    </div>
+
+    <script src="./js/firebaseconfig.js"></script>
+    <script src="./js/CadastroEstoque.js"></script>
+</body>
+
+</html>
