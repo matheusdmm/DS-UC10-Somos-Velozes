@@ -1,9 +1,9 @@
 // globais dos nomes do form
-let name_, preco_, produto_, quantidade_, id;
+let name_, preco_, quantidade_, id, marca_;
 
 // referenciar alguma coleção/tabela desejada
-// nesse caso a tabela de fornecedores
-let nomesRef = firebase.database().ref("Estoque");
+// nesse caso a tabela de estoque
+let estoqueRef = firebase.database().ref("Estoque");
 // caso quisessemos por exemplo uma tabeça de CLIENTES poderiamos fazer:
 // let clientesRef = firebase.database().ref('Clientes');
 
@@ -16,13 +16,12 @@ function getInputValue(id) {
 
 // template pra puxar os dados do form
 function ReadForm() {
-    id_         = getInputValue("fornecedorID");
-    name_       = getInputValue("fornecedorNome");
-    contato_    = getInputValue("fornecedorContato");
-    produto_    = getInputValue("fornecedorProduto");
+    id_         = getInputValue("produtoID");
+    name_       = getInputValue("produtoNome");
+    marca_      = getInputValue("marcaProduto");
     descricao_  = getInputValue("produtoDescricao");
-    preco_      = getInputValue("fornecedorProdutoPreco");
-    quantidade_ = getInputValue("fornecedorProdutoQuantidade");
+    preco_      = getInputValue("produtoPreco");
+    quantidade_ = getInputValue("produtoQuantidade");
 }
 
 // func para salvar o fornecedor no banco
@@ -30,21 +29,20 @@ function Insert() {
     ReadForm();
     // caso queira uma id diferente posteriormente
     //let customId = [name, ' ', produto].join('');
-    // let newNomesRef = nomesRef.child(customId);
+    // let newestoqueRef = estoqueRef.child(customId);
 
-    let newNomesRef = nomesRef.push();
+    let newestoqueRef = estoqueRef.push();
 
     // cria um objeto no banco com os atributos desejados
-    newNomesRef.set({
+    newestoqueRef.set({
         name:       name_,
-        contato:    contato_,
-        produto:    produto_,
+        marca:    marca_,
         descricao:  descricao_,
         preco:      preco_,
         quantidade: quantidade_,
     });
 
-    alert("Fornecedor cadastrado!");
+    alert("Produto cadastrado!");
     window.location.reload();
 }
 
@@ -54,7 +52,7 @@ function Select() {
 
     firebase
         .database()
-        .ref("Fornecedores/" + id_)
+        .ref("Estoque/" + id_)
         .on("value", function(snapshot) {
             document.getElementById("fornecedorNome").value              = snapshot.val().name;
             document.getElementById("fornecedorContato").value           = snapshot.val().contato;
@@ -69,17 +67,17 @@ function Select() {
 function Delete() {
     ReadForm();
     
-    let c = confirm("Tem certeza que deseja apagar o fornecedor " + name_ + "?");
+    let confirm = confirm("Tem certeza que deseja apagar o fornecedor " + name_ + "?");
     
-    if (c == true) {
+    if (confirm == true) {
         firebase
         .database()
-        .ref("Fornecedores/" + id_)
+        .ref("Estoque/" + id_)
         .remove();
 
         window.location.reload();
     } else {
-        window.location.reload();
+        //window.location.reload();
     }
 
 }
@@ -89,7 +87,7 @@ function Update() {
     ReadForm();
     firebase
         .database()
-        .ref("Fornecedores/" + id_)
+        .ref("Estoque/" + id_)
         .update({
             name:       name_,
             contato:    contato_,
